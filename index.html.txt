@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Francez | UI Maker</title>
+</head>
+<body style="background:#0f0e0b;color:#f2efe9;font-family:Arial;padding:40px">
+  <h1>Francez</h1>
+  <p>UI Maker focado em HUDs e interfaces de RPG.</p>
+  <p>Site em construção.</p>
+</body>
+</html>
