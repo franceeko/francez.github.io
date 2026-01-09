@@ -1,65 +1,71 @@
-:root{
-  --bg:#0b0a08;
-  --panel:#15130f;
-  --text:#f5f2ec;
-  --muted:#b7a989;
-  --accent:#c9a05a;
+:root {
+  --bg: #0b0a08;
+  --bg-soft: #14130f;
+  --text: #f2efe9;
+  --muted: #9c9a94;
+  --accent: #c9a24d;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter, system-ui, Arial, sans-serif;
+html {
+  scroll-behavior: smooth;
 }
 
-/* fundo vivo */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(800px at 10% 20%, rgba(201,160,90,.15), transparent 40%),
-    radial-gradient(600px at 90% 80%, rgba(201,160,90,.10), transparent 40%);
-  z-index:-1;
-  animation: float 18s ease-in-out infinite alternate;
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #18160f, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-@keyframes float{
-  from{ transform:translateY(-20px); }
-  to{ transform:translateY(20px); }
+/* animação de entrada */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s ease, transform .8s ease;
 }
 
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:80px 24px;
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-header{
-  margin-bottom:120px;
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 120px 24px;
 }
 
-header h1{
-  font-size:48px;
-  margin-bottom:12px;
-  background:linear-gradient(120deg,#f5f2ec,#c9a05a);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -1px;
 }
 
-header p{
-  color:var(--muted);
-  max-width:560px;
-  font-size:17px;
+p {
+  margin-top: 12px;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.6;
 }
 
-section{
+/* glow sutil */
+.glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,162,77,.12), transparent 60%);
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
   margin-bottom:120px;
 }
 
