@@ -1,15 +1,11 @@
-const reveals = document.querySelectorAll(".reveal");
+const items = document.querySelectorAll(".reveal");
 
-function revealOnScroll(){
-  const trigger = window.innerHeight * 0.85;
-
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < trigger){
-      el.classList.add("active");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
     }
   });
-}
+},{ threshold:0.15 });
 
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+items.forEach(el => observer.observe(el));
